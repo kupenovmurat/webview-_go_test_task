@@ -14,7 +14,7 @@ package webview
 #cgo windows CXXFLAGS: -DWEBVIEW_EDGE -std=c++14 -I${SRCDIR}/libs/mswebview2/include
 #cgo windows LDFLAGS: -static -ladvapi32 -lole32 -lshell32 -lshlwapi -luser32 -lversion
 
-#include "/Users/admin/Desktop/maddevs_test_task/third_party/webview/core/include/webview/webview.h"
+#include <webview/webview.h>
 
 #include <stdlib.h>
 #include <stdint.h>
@@ -24,7 +24,6 @@ void CgoWebViewBind(webview_t w, const char *name, uintptr_t index);
 void CgoWebViewUnbind(webview_t w, const char *name);
 
 // Ensure cgo sees the declaration even if an older vendor header is picked
-webview_error_t webview_set_user_agent(webview_t w, const char *user_agent);
 */
 import "C"
 import (
